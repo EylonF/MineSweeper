@@ -1,0 +1,185 @@
+body{
+    text-align: center;
+    background-color: #EEEEEE ;
+}
+
+h1 {
+    width: 500px;
+    color: #212121;
+    background-color: #D9CAB3;
+    padding: 15px;
+    border-bottom: solid #212121;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-weight: bolder;
+    /* text-shadow: rgb(0, 0, 0) 0px 0px 20px; ; */
+    box-shadow: 0px 0px 10px #00000070;
+    margin: auto;
+    margin-bottom: 10px;
+   
+}
+
+.modal {
+    /* position: absolute; */
+    background-color: #6D9886;
+    margin: auto;
+    display: block;
+    width: 500px;
+    height: 500px;
+    border: solid 5px ;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 10px #00000070;
+    font-size: 40px;
+    font-family: monospace;
+    
+}
+
+.modal p{
+  display:inline;
+  position:inherit;
+  /* float: left; */
+  margin: 2px;
+  
+}
+
+.modal button{
+  /* display: inline; */
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size:x-large;
+  font-weight: 300;
+  line-height: normal;
+  min-height: 20px;
+  min-width: 0;
+  outline: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  /* width: 100%; */
+  will-change: transform;
+  margin: 0px 5px;
+  
+}
+
+.modal button:disabled {
+  pointer-events: none;
+}
+
+.modal button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.modal button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.game {
+	border:solid 2px #000000;
+  background-color:#66806a83;
+    width: 400px;
+    height: 440px;
+    margin: 10px auto;
+    box-shadow: 0px 0px 10px #00000070;
+}
+
+.game h1 {
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    padding: auto;
+    border: none;
+    margin-bottom: 5px;
+   box-shadow: none;
+    text-align: center;
+    box-sizing: border-box;
+    color: #212121;
+    background-color: #d9cab300;
+    
+}
+
+.board {
+    /* background-color: #000000; */
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border: solid #000000 1px;
+    box-shadow: 0px 0px 10px #b7cec4c7;
+    box-sizing: border-box;
+    width: 320px;
+    height: 320px;
+	
+}
+
+.cell {
+    box-sizing: border-box;
+    border: #000000 1px solid;
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    margin: auto;
+    
+    
+}
+
+/* .cell clicked {
+ 
+ border: #000000 1px solid;
+ width: 50px;
+ height: 50px;
+ font-size: 20px;
+ background-color: gray;
+} */
+
+.cell-medium{
+  box-sizing: border-box;
+    border: #000000 1px solid;
+    width: 39px;
+    height: 39px;
+    font-size: 20px;
+    margin: auto;
+    
+    
+}
+
+/* .cell-medium clicked {
+ 
+ border: #000000 1px solid;
+ width: 50px;
+ height: 50px;
+ font-size: 20px;
+} */
+
+.cell-hard  {
+  box-sizing: border-box;
+    border: #000000 1px solid;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    margin: auto;
+    
+    
+}
+
+/* .cell-hard clicked {
+ 
+ border: #000000 1px solid;
+ width: 50px;
+ height: 50px;
+ font-size: 20px;
+} */
