@@ -16,14 +16,14 @@ var gBoard = []
 var gLevel = {
     SIZE: 4,
     MINES: 2,
-    LIFES: 1
+    LIFES: 1,
+    CELLS: 16
 }
 
 var gGame = {
     isOn: false,
     isOver: false,
     shownCount: 0,
-    markedCount: 0,
     secsPassed: 0
 }
 
@@ -36,24 +36,29 @@ function initGame() {
         isOn: false,
         isOver: false,
         shownCount: 0,
-        markedCount: 0,
         secsPassed: 0
     }
     clearInterval(gGameInterval)
     gElModal.querySelector(' h1 span').innerText = 0
-    
+
     switch (gLevel.SIZE) {
         case 4:
             gLevel.LIFES = 1
+            gLevel.MINES = 2
+            gLevel.CELLS = 16
             break;
         case 8:
             gLevel.LIFES = 2
+            gLevel.MINES = 12
+            gLevel.CELLS = 64
             break;
         case 12:
             gLevel.LIFES = 3
+            gLevel.MINES = 30
+            gLevel.CELLS = 144
             break;
     }
-    
+
     renderLifes(gLevel.LIFES)
 }
 
@@ -66,6 +71,7 @@ function createBoard(size) {
                 minesAroundCount: 0,
                 isShown: false,
                 isMine: false,
+                isBombed: false,
                 isMarked: false
             }
 
@@ -126,8 +132,10 @@ function cellClicked(elCell, i, j) {
         if (!gBoard[i][j].isShown && !gBoard[i][j].isMarked) {
             if (gBoard[i][j].isMine) {
                 gLevel.LIFES--
+                gBoard[i][j].isBombed = true
                 renderLifes(gLevel.LIFES)
                 elCell.innerText = MINE
+                gBoard[i][j].isShown = true
                 if (!gLevel.LIFES) {
                     gElModal.querySelector(' button').innerText = LOSE
                     gameOver()
@@ -136,19 +144,19 @@ function cellClicked(elCell, i, j) {
                 gGame.shownCount++
                 // console.log('gGame.shownCount', gGame.shownCount)
                 var mineNegs = setMinesNegsCount(i, j, gBoard)
-                checkVictory(gBoard)
-                gBoard[i][j].isShown = true
                 elCell.style.backgroundColor = '#D0CAB2'
+                gBoard[i][j].isShown = true
                 if (mineNegs) {
                     elCell.innerText = mineNegs
                 } else {
                     elCell.innerText = ''
                     showNegs(i, j, gBoard,)
-
+                    
                 }
             }
         }
     }
+    checkVictory(gBoard)
 }
 
 function gameOver() {
@@ -158,21 +166,22 @@ function gameOver() {
 }
 
 function checkVictory(board) {
-    var cellsCount = 0
+    var markedCount = 0
     var notMineCount = 0
+    var shownCount =0
     for (var i = 0; i < board.length; i++) {
-
         for (var j = 0; j < board.length; j++) {
-            cellsCount++
+            // cellsCount++
             if (!board[i][j].isMine) notMineCount++
-            // notMineCount = (!board[i][j].isMine) ? notMineCount++ : notMineCount
-            // console.log('notMineCount',notMineCount)
-            // console.log('cellsCount',cellsCount)
-
+            if (board[i][j].isMarked || board[i][j].isBombed) markedCount++
+            if (board[i][j].isShown) shownCount++
+           
         }
     }
-
-    if (gGame.shownCount === notMineCount && gGame.shownCount + gGame.markedCount === cellsCount) {
+    // console.log('shownCount',shownCount)
+    // console.log('notMineCount',notMineCount)
+    // console.log('markedCount',markedCount)
+    if (shownCount === notMineCount && shownCount + markedCount === gLevel.CELLS) {
         gElModal.querySelector(' button').innerText = WIN
         gameOver()
     }
@@ -196,11 +205,9 @@ function cellMarked(elCell, ev, i, j) {
             }
             if (!gBoard[i][j].isMarked) {
                 gBoard[i][j].isMarked = true
-                gGame.markedCount++
                 elCell.innerText = FLAG
             } else {
                 gBoard[i][j].isMarked = false
-                gGame.markedCount--
                 elCell.innerText = ''
             }
         }
@@ -214,15 +221,18 @@ function chengeBoardZise(size) {
         case 4:
             gLevel.MINES = 2
             gLevel.LIFES = 1
+            gLevel.CELLS = 16
             break;
         case 8:
             gLevel.MINES = 12
             gLevel.LIFES = 2
+            gLevel.CELLS = 62
 
             break;
         case 12:
             gLevel.MINES = 30
             gLevel.LIFES = 3
+            gLevel.CELLS = 144
 
             break;
     }
@@ -271,10 +281,10 @@ function renderLifes(lifes) {
         case 3:
             elLifes.innerText = `${LIFE} ${LIFE} ${LIFE}`
             break;
-            default:
+        default:
             elLifes.innerText = ''
             break;
-            
+
 
     }
 }

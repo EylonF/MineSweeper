@@ -83,6 +83,16 @@ h1 {
   transform: translateY(-2px);
 }
 
+.modal .easy:hover {
+  background-color: #06b900;
+}
+.modal .medium:hover {
+  background-color: #FFF323;
+}
+.modal .hard:hover {
+  background-color: #F90716;
+}
+
 .modal button:active {
   box-shadow: none;
   transform: translateY(0);
@@ -137,15 +147,6 @@ h1 {
     
 }
 
-/* .cell clicked {
- 
- border: #000000 1px solid;
- width: 50px;
- height: 50px;
- font-size: 20px;
- background-color: gray;
-} */
-
 .cell-medium{
   box-sizing: border-box;
     border: #000000 1px solid;
@@ -157,29 +158,14 @@ h1 {
     
 }
 
-/* .cell-medium clicked {
- 
- border: #000000 1px solid;
- width: 50px;
- height: 50px;
- font-size: 20px;
-} */
-
 .cell-hard  {
   box-sizing: border-box;
     border: #000000 1px solid;
-    width: 25px;
-    height: 25px;
+    width: 25.3px;
+    height: 25.3px;
     font-size: 10px;
     margin: auto;
     
     
 }
 
-/* .cell-hard clicked {
- 
- border: #000000 1px solid;
- width: 50px;
- height: 50px;
- font-size: 20px;
-} */
