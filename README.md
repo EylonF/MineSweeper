@@ -16,4 +16,13 @@ The classic board game made with vanila js, as part of the 1st sprint of "Coding
 - CSS
 - JavaScript (vanila)
 
+# implements:
+- recursion
+- win/lose logic
+- Randomizing bomb placement
+- Dynamically sizing the table when clicking a difficulty level
+- functional timer that displayed the seconds elapsed.
+- Assigning click handlers to different events.
+
+
 <img src="https://res.cloudinary.com/eylonf/image/upload/v1647339368/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_nfulqc.png" alt="css3"/>
