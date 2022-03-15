@@ -4,12 +4,12 @@ The classic board game made with vanila js, as part of the 1st sprint of "Coding
 <a href="https://eylonf.github.io/MineSweeper/" target="blank">LINK TO GAME</a>
 
 # basic gameplay:
-1.Select your difficulty level-
-Easy = 4x4, 2 mines , 1 life.
-Medium = 8x8, 12 mines, 2 lifes.
-Hard = 12x12, 30 mines, 3 lifes.
-2.Click anywhere on the board to begin and start the timer. 
-Use "Right Click" to add or remove flags to a cell if you think it's a mine.
+- Select your difficulty level-
+- Easy = 4x4, 2 mines , 1 life.
+- Medium = 8x8, 12 mines, 2 lifes.
+- Hard = 12x12, 30 mines, 3 lifes.
+- Click anywhere on the board to begin and start the timer. 
+- Use "Right Click" to add or remove flags to a cell if you think it's a mine.
 
 # Technologies Used:
 HTML
